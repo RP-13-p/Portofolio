@@ -4,8 +4,7 @@
     "about": "About",
     "education": "Education",
     "experience": "Experience",
-    "projects": "Projects",
-    "contact": "Contact"
+    "projects": "Projects"
   },
   "footer": {
     "cv": "CV",
@@ -14,25 +13,20 @@
   },
     
     "hero": {
-    "title": "",
+    "title": "Hi, I'm Raphael Partouche",
     "subtitle": ""
   },
   "about": {
-    "title": "",
+    "title": "About Me ...",
     "text": ""
   },
   "education": {
-    "title": ""
+    "title": "Education"
   },
   "experience": {
-    "title": ""
+    "title": "Experience"
   },
   "projects": {
-    "title": ""
-  },
-  "contact": {
-    "title": "",
-    "text": "",
-    "cta": ""
+    "title": "Projects"
   }
 }

@@ -5,7 +5,7 @@ import Hero from "./sections/hero";
 import Education from "./sections/education";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
-import Contact from "./sections/contact";
+
 
 export default function App() {
   return (
@@ -15,9 +15,8 @@ export default function App() {
         <Hero />
         <About />
         <Experience />
-        <Projects />
         <Education />
-        <Contact />
+        <Projects />
       </main>
       <Footer />
     </>

@@ -8,13 +8,11 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-900 font-sans antialiased;
+  @apply bg-gradient-to-b from-white to-gray-50 text-gray-900 font-sans antialiased;
 }
 
 /* Navbar */
-nav {
-  @apply fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50;
-}
+/* nav gérée directement dans le composant */
 
 /* Sections */
 section {
