@@ -1,7 +1,6 @@
 {
   "nav": {
-    "home": "Accueil",
-    "about": "À propos",
+    "home": "À propos",
     "education": "Formation",
     "experience": "Expérience",
     "projects": "Projets",
@@ -15,7 +14,7 @@
   },
 
   "hero": {
-    "title": "",
+    "title": "Bonjour, je suis Raphael Partouche",
     "subtitle": ""
   },
   "about": {
@@ -23,18 +22,41 @@
     "text": ""
   },
   "education": {
-    "title": ""
+    "title": "Formation",
+    "eurecom": {
+      "title": "EURECOM",
+      "subtitle": "Diplôme d’ingénieur — Master en Data",
+      "description": "Spécialisation en science des données, apprentissage automatique, systèmes distribués.",
+      "year": "2024 — 2027",
+      "city": "Sophia Antipolis, France"
+    },
+    "jacques": {
+      "title": "Lycée Jacques-Decour",
+      "subtitle": "Classes préparatoires",
+      "description": "Parcours intensif en mathématiques et physique, préparation aux concours.",
+      "year": "2022 — 2024",
+      "city": "Paris, France"
+    }
   },
   "experience": {
-    "title": ""
+    "title": "Expérience",
+    "civibot": {
+      "title": "Développeur Full-Stack",
+      "company": "CiviBot",
+      "duration": "2024 — Présent",
+      "location": "Remote",
+      "description": "Développement d'outils d'automatisation et d'analyse de données pour améliorer l'efficacité des processus civiques."
+    },
+    "waterid": {
+      "title": "Stagiaire Data Analyst",
+      "company": "Water ID",
+      "duration": "2023 — 2024",
+      "location": "Paris, France",
+      "description": "Travail sur des solutions d'identification et de gestion de l'eau, développement d'applications web et mobile."
+    }
   },
   "projects": {
-    "title": ""
-  },
-  "contact": {
-    "title": "",
-    "text": "",
-    "cta": ""
+    "title": "Projets"
   }
 }
 

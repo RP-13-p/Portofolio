@@ -14,17 +14,42 @@
     
     "hero": {
     "title": "Hi, I'm Raphael Partouche",
-    "subtitle": ""
-  },
-  "about": {
-    "title": "About Me ...",
-    "text": ""
+    "subtitle": "I'm a engineer student in Data Science"
+  
   },
   "education": {
-    "title": "Education"
+    "title": "Education",
+    "eurecom": {
+      "title": "EURECOM",
+      "subtitle": "Engineering degree — Master's in Data",
+      "description": "Acquired advanced knowledge in computer science and telecommunications, focusing on machine learning, cybersecurity, and networking. Gained hands-on experience with industry technologies through collaborative projects in an international setting.",
+      "year": "2024 — 2027",
+      "city": "Sophia Antipolis, France"
+    },
+    "jacques": {
+      "title": "Lycée Jacques-Decour",
+      "subtitle": "Preparatory classes",
+      "description": "Intensive track in mathematics and physics, competitive exam preparation.",
+      "year": "2022 — 2024",
+      "city": "Paris, France"
+    }
   },
   "experience": {
-    "title": "Experience"
+    "title": "Experience",
+    "civibot": {
+      "title": "Full-Stack Developer",
+      "company": "CiviBot",
+      "duration": "2024 — Present",
+      "location": "Remote",
+      "description": "Development of automation tools and data analysis solutions to improve civic process efficiency."
+    },
+    "waterid": {
+      "title": "Data Analyst Intern",
+      "company": "Water ID",
+      "duration": "2023 — 2024",
+      "location": "Paris, France",
+      "description": "Work on water identification and management solutions, web and mobile application development."
+    }
   },
   "projects": {
     "title": "Projects"

@@ -19,7 +19,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 md:px-20">
+    <section id="projects" className="py-12 px-6 md:px-20">
       <h2 className="text-3xl font-bold mb-6">{t("projects.title")}</h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((p, i) => (
