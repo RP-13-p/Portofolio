@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Global Style ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900 font-sans antialiased;
+}
+
+/* Navbar */
+nav {
+  @apply fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50;
+}
+
+/* Sections */
+section {
+  @apply min-h-screen flex flex-col justify-center px-6 md:px-20 py-20;
+}
+
+/* Titles */
+h1, h2, h3 {
+  @apply font-bold text-gray-900;
+}
+
+h1 {
+  @apply text-4xl md:text-6xl mb-4;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl mb-6;
+}
+
+p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+/* Buttons & Links */
+a, button {
+  @apply transition-colors duration-200;
+}
+
+a:hover, button:hover {
+  @apply text-blue-600;
+}
+
+/* Footer */
+footer {
+  @apply bg-white border-t border-gray-200 text-center py-6 text-gray-700;
+}

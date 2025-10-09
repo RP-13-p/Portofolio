@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "education": "Formation",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  
+  "footer": {
+    "cv": "CV",
+    "demo": "Démo",
+    "code": "Code"
+  },
+
+  "hero": {
+    "title": "",
+    "subtitle": ""
+  },
+  "about": {
+    "title": "",
+    "text": ""
+  },
+  "education": {
+    "title": ""
+  },
+  "experience": {
+    "title": ""
+  },
+  "projects": {
+    "title": ""
+  },
+  "contact": {
+    "title": "",
+    "text": "",
+    "cta": ""
+  }
+}
+
