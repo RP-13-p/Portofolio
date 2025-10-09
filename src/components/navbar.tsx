@@ -5,7 +5,7 @@ import { Download, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const sections = ["hero", "experience", "education", "projects"];
+  const sections = ["hero", "experience", "education", "projects", "skills"];
 
   const [openLang, setOpenLang] = React.useState(false);
   const current = i18n.language === "en" ? "EN" : "FR";

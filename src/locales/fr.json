@@ -1,10 +1,11 @@
 {
   "nav": {
-    "home": "À propos",
+    "home": "Profil",
     "education": "Formation",
     "experience": "Expérience",
     "projects": "Projets",
-    "contact": "Contact"
+    "contact": "Contact",
+    "skills":"Compétences"
   },
   
   "footer": {
@@ -57,6 +58,9 @@
   },
   "projects": {
     "title": "Projets"
+  },
+  "skills": {
+    "title": "Compétences"
   }
 }
 
