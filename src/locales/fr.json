@@ -61,7 +61,28 @@
     }
   },
   "projects": {
-    "title": "Projets"
+    "title": "Projets",
+    "civibot": {
+      "title": "CiviBot",
+      "description": "Développement full-stack d'un assistant IA pour ingénieurs civils (React + FastAPI).\n\nImplémentation d'un système de Q&A basé sur des documents avec indexation vectorielle et une UX propre pour les uploads et le chat."
+    },
+    "othello": {
+      "title": "Othello IA (Navigateur)",
+      "description": "Othello en JavaScript avec un adversaire IA utilisant minimax + élagage alpha-bêta.\n\nConception d'une interface élégante avec du JS/CSS pur et des raccourcis clavier."
+    },
+    "sightsense": {
+      "title": "Sightsense",
+      "description": "Application React + FastAPI pour discuter avec des PDFs médicaux en citant des sections exactes.\n\nFocus sur la fiabilité, les fenêtres de contexte et la confiance utilisateur."
+    },
+    "ui": {
+      "previous": "Projet précédent",
+      "next": "Projet suivant",
+      "close": "Fermer",
+      "previous_image": "Image précédente",
+      "next_image": "Image suivante",
+      "visit_site": "Consulter le site",
+      "view_repo": "Voir le repository"
+    }
   },
   "skills": {
     "title": "Compétences"

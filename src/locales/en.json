@@ -56,7 +56,28 @@
     }
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "civibot": {
+      "title": "CiviBot",
+      "description": "Full-stack development of an AI assistant for civil engineers (React + FastAPI).\n\nImplemented document-grounded Q&A with vector indexes and a clean UX for uploads and chat."
+    },
+    "othello": {
+      "title": "Othello AI (Browser)",
+      "description": "JavaScript Othello with an AI opponent using minimax + alpha-beta pruning.\n\nDesigned a sleek UI with pure JS/CSS and keyboard shortcuts."
+    },
+    "sightsense": {
+      "title": "Sightsense",
+      "description": "React + FastAPI app for chatting with medical PDFs while citing exact sections.\n\nFocus on reliability, context windows, and user trust."
+    },
+    "ui": {
+      "previous": "Previous project",
+      "next": "Next project",
+      "close": "Close",
+      "previous_image": "Previous image",
+      "next_image": "Next image",
+      "visit_site": "Visit site",
+      "view_repo": "View repository"
+    }
   },
   "skills": {
     "title": "Skills"
