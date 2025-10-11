@@ -5,15 +5,19 @@
     "experience": "Expérience",
     "projects": "Projets",
     "contact": "Contact",
-    "skills":"Compétences"
+    "skills": "Compétences"
   },
-  
+
+  "ui": {
+  "read_more": "Lire plus",
+  "read_less": "Lire moins"
+  },
+
   "footer": {
     "cv": "CV",
     "demo": "Démo",
     "code": "Code"
   },
-
   "hero": {
     "title": "Bonjour, je suis Raphael Partouche",
     "subtitle": ""
@@ -27,14 +31,14 @@
     "eurecom": {
       "title": "EURECOM",
       "subtitle": "Diplôme d’ingénieur — Master en Data",
-      "description": "Spécialisation en science des données, apprentissage automatique, systèmes distribués.",
+      "description": "Formation d’ingénieur d’excellence au cœur du pôle technologique de Sophia Antipolis, orientée vers la science des données et l’intelligence artificielle. J’y développe une expertise solide en apprentissage automatique, bases de données, Cloud, sécurité des systèmes d’information et théorie de l’information.\n\n Les enseignements incluent <em><strong> Machine Learning, Database Systems, Quantum Computing, Cloud, Network Security, Image Processing, Information Theory</strong></em>, mais aussi des disciplines transversales telles que le droit et le management.\n\n De plus, les projets combinent recherche et gestion technique, s’appuyant sur l’analyse régulière d’articles scientifiques pour guider des développements innovants menés en équipe internationale, formant ainsi à des postes d’ingénieur data, IA.",
       "year": "2024 — 2027",
       "city": "Sophia Antipolis, France"
     },
     "jacques": {
       "title": "Lycée Jacques-Decour",
-      "subtitle": "Classes préparatoires",
-      "description": "Parcours intensif en mathématiques et physique, préparation aux concours.",
+      "subtitle": "Classes préparatoires - PSCI/PSI*",
+      "description": "Deux années de formation intensive en mathématiques, physique, sciences de l’ingénieur et informatique, au sein d’un environnement académique sélectif et exigeant préparant aux concours d’entrée des grandes écoles d’ingénieurs françaises. Cette formation, fondée sur la rigueur scientifique, la résolution de problèmes complexes et la maîtrise des raisonnements logiques, développe une solide capacité d’abstraction, d’analyse et de travail sous pression. Elle m’a apporté des bases théoriques robustes et une méthode de travail efficace, essentielles pour aborder les défis techniques et scientifiques rencontrés dans le domaine de l’ingénierie.",
       "year": "2022 — 2024",
       "city": "Paris, France"
     }
@@ -42,18 +46,18 @@
   "experience": {
     "title": "Expérience",
     "civibot": {
-      "title": "Développeur Full-Stack",
+      "title": "Ingénieur Software",
       "company": "CiviBot",
-      "duration": "2024 — Présent",
-      "location": "Remote",
-      "description": "Développement d'outils d'automatisation et d'analyse de données pour améliorer l'efficacité des processus civiques."
+      "duration": "Juillet 2025 — Aujourd’hui",
+      "location": "Hybrid",
+      "description": "J’ai intégré CiviBot, startup incubée à UC Berkeley SkyDeck, en tant qu’ingénieur full-stack chargé de faire évoluer la plateforme d’assistance IA destinée aux ingénieurs civils. Mon travail s’est articulé autour du développement d’un site React couplé à une API FastAPI, avec une forte exigence de qualité produit et de maintenabilité.\n\n Côté frontend, j’ai conçu et harmonisé plusieurs parcours utilisateurs (connexion, abonnement, compte utilisateur) tout en mettant en place une architecture d’internationalisation complète avec react-i18next. J’ai également refactorisé la navigation et le système de formulaires pour renforcer la cohérence UX et préparer l’industrialisation.\n\n  Côté backend, j’ai développé et documenté plusieurs endpoints critiques (gestion de compte, contact, récupération et changement de mot de passe), tout en participant à la mise en place de la fonctionnalité ChatPDF, intégrant un pipeline d’ingestion et d’indexation de documents avec génération de réponses contextualisées.\n\n  Depuis la fin du stage, je continue ma collaboration à distance avec l'équipe de CiviBot afin d’accompagner la montée en échelle technique du produit et son intégration continue."
     },
     "waterid": {
-      "title": "Stagiaire Data Analyst",
+      "title": "Testeur qualité",
       "company": "Water ID",
-      "duration": "2023 — 2024",
-      "location": "Paris, France",
-      "description": "Travail sur des solutions d'identification et de gestion de l'eau, développement d'applications web et mobile."
+      "duration": "Juillet 2021",
+      "location": "Karlsruhe, Allemagne",
+      "description": "Premier stage à l’étranger et première expérience en ingénierie. Participation aux tests d’étanchéité et de fiabilité de dispositifs électroniques destinés à l’analyse de la qualité de l’eau des piscines. Implication dans la validation fonctionnelle des prototypes et l’amélioration des procédures de test en environnement industriel."
     }
   },
   "projects": {

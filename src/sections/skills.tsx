@@ -9,6 +9,7 @@ const skills = [
   { name: "TailwindCSS", image: "/skills/tailwind.svg" },
   { name: "Python", image: "/skills/python.svg" },
   { name: " C ", image: "/skills/c.svg" },
+  { name: "SQL", image: "/skills/sql.svg" },
   { name: "Machine Learning", image: "/skills/machine-learning.svg" },
 ];
 

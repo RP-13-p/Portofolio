@@ -4,32 +4,36 @@
     "education": "Education",
     "experience": "Experience",
     "projects": "Projects",
-    "skills" : "Skills"
+    "skills": "Skills"
   },
   "footer": {
     "cv": "CV",
     "demo": "Demo",
     "code": "Code"
   },
-    
-    "hero": {
+
+  "ui": {
+  "read_more": "Read more",
+  "read_less": "Read less"
+  },
+
+  "hero": {
     "title": "Hi, I'm Raphael Partouche",
-    "subtitle": "I'm a engineer student in Data Science"
-  
+    "subtitle": "I'm an engineering student in Data Science"
   },
   "education": {
     "title": "Education",
     "eurecom": {
       "title": "EURECOM",
       "subtitle": "Engineering degree — Master's in Data",
-      "description": "Acquired advanced knowledge in computer science and telecommunications, focusing on machine learning, cybersecurity, and networking. Gained hands-on experience with industry technologies through collaborative projects in an international setting.",
+      "description": "High-level engineering program of excellence at the heart of the Sophia Antipolis technology hub, focused on data science and artificial intelligence. I am developing strong expertise in machine learning, databases, cloud computing, information systems security, and information theory.\n\n he curriculum includes <em><strong>Machine Learning, Database Systems, Quantum Computing, Cloud, Network security, Image processing, and Information theory</em></strong>, as well as cross-disciplinary subjects such as law and management.\n\n Moreover, the projects combine research and technical management, relying on regular analysis of scientific publications to guide innovative developments carried out within international teams, thus preparing for data, AI, or R&D engineering roles.",
       "year": "2024 — 2027",
       "city": "Sophia Antipolis, France"
     },
     "jacques": {
       "title": "Lycée Jacques-Decour",
-      "subtitle": "Preparatory classes",
-      "description": "Intensive track in mathematics and physics, competitive exam preparation.",
+      "subtitle": "Preparatory classes - PSCI/PSI*",
+      "description": "Two years of intensive training in mathematics, physics, engineering sciences, and computer science within a highly selective and demanding academic environment, preparing for the national competitive exams to enter top French engineering schools. This program, grounded in scientific rigor, problem-solving, and logical reasoning, fosters strong analytical abilities, abstraction skills, and resilience under pressure. It provided me with solid theoretical foundations and an efficient working methodology, essential for tackling the technical and scientific challenges of engineering.",
       "year": "2022 — 2024",
       "city": "Paris, France"
     }
@@ -37,18 +41,18 @@
   "experience": {
     "title": "Experience",
     "civibot": {
-      "title": "Full-Stack Developer",
+      "title": "Software Engineer",
       "company": "CiviBot",
-      "duration": "2024 — Present",
-      "location": "Remote",
-      "description": "Development of automation tools and data analysis solutions to improve civic process efficiency."
+      "duration": "July 2025 — Present",
+      "location": "Hybrid",
+      "description": "I joined CiviBot, a startup incubated at UC Berkeley SkyDeck, as a full-stack engineer contributing to the development of an AI-powered platform for civil engineers. My role combines frontend engineering in React with backend design in FastAPI, emphasizing clean architecture, scalability, and product reliability.\n\n On the frontend, I built and unified key user flows (authentication, subscription, account management) and implemented a full internationalization system using react-i18next. I also redesigned the navigation and form components to enhance UX consistency and code maintainability.\n\n On the backend, I developed and documented major REST endpoints (account management, contact, password reset/change) and contributed to the ChatPDF feature, integrating a document ingestion and vectorization pipeline to support contextualized Q&A.\n\n Since the end of the internship, I have continued working remotely with the CiviBot team, supporting the product’s technical growth and continuous integration."
     },
     "waterid": {
-      "title": "Data Analyst Intern",
+      "title": "Product Tester",
       "company": "Water ID",
-      "duration": "2023 — 2024",
-      "location": "Paris, France",
-      "description": "Work on water identification and management solutions, web and mobile application development."
+      "duration": "July 2021 ",
+      "location": "Karlsruhe, Germany",
+      "description": "First international internship and initial engineering experience. Contributed to waterproofing and reliability testing of electronic devices designed to monitor swimming pool water quality. Involved in prototype validation and optimization of testing procedures within an industrial environment."
     }
   },
   "projects": {
