@@ -2,12 +2,12 @@ import React from "react";
 
 export type Project = {
   title: string;
-  description: string; // \n\n => paragraphes
+  description: string; 
   images: string[];
   tech: string[];
   demo?: string;
   repo?: string;
-  site?: string; // Lien vers le site web
+  site?: string; 
 };
 
 type Props = {
@@ -28,7 +28,7 @@ export default function ProjectCard({ project, onClick }: Props) {
     >
       <img src={cover} alt={project.title} className="w-full h-96 object-contain bg-white" />
       <div className="p-6">
-        <h3 className="text-2xl font-semibold">{project.title}</h3>
+        <h3 className="text-2xl font-semibold text-center">{project.title}</h3>
       </div>
     </article>
   );

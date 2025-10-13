@@ -49,8 +49,8 @@ export default function Navbar() {
           </motion.ul>
 
           <div className="flex justify-end items-center gap-3 pr-3 py-2 relative text-gray-700">
-            <a href="/CV.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-1 px-2 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-sm font-medium shadow-sm transition-colors ring-0 hover:ring-1 hover:ring-black/20">
-              <span>CV</span> <Download size={18} />
+            <a href="/Resume_FALL_2025.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-1 px-2 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-sm font-medium shadow-sm transition-colors ring-0 hover:ring-1 hover:ring-black/20">
+              <span>{t("nav.resume")}</span> <Download size={18} />
             </a>
             <button
               onClick={() => setOpenLang((v) => !v)}

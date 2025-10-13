@@ -18,11 +18,11 @@ export default function Skills() {
   return (
     <section id="skills" className="py-12 px-6 md:px-20">
       <h2 className="text-3xl font-bold mb-6">{t("skills.title")}</h2>
-      <div className="relative w-[80vw] md:w-[70vw] h-[14vh] justify-center items-center overflow-hidden py-6 mx-auto">
+      <div className="relative w-[85vw] md:w-[70vw] h-[18vh] justify-center items-center overflow-hidden py-6 mx-auto">
         <div className="absolute flex animate-marquee whitespace-nowrap">
           {[...skills, ...skills].map((skill, idx) => (
             <div key={idx} className="inline-block px-6 md:px-10 text-center">
-              <div className="h-[5vh] w-[5vh] grid place-items-center mx-auto">
+              <div className="h-[8vh] w-[8vh] grid place-items-center mx-auto">
                 <img
                   src={skill.image}
                   alt={skill.name}

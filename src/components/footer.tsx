@@ -8,7 +8,7 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/raphael-partouche-325709208" target="_blank" rel="noreferrer">
           <Linkedin />
         </a>
-        <a href="/CV.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-1">
+        <a href="/Resume_FALL_2025.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-1">
           <span>CV</span> <Download size={18} />
         </a>
         <a href="https://github.com/RP-13-p" target="_blank" rel="noreferrer">
