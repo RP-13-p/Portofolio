@@ -97,8 +97,8 @@ export default function Projects() {
       ? "animate-[slideInRight_280ms_ease-out]"
       : "animate-[slideInLeft_280ms_ease-out]";
 
-  return (
-    <section id="projects" className="py-12 px-4 md:px-6 lg:px-20 flex flex-col items-center">
+  return ( 
+    <section id="projects" className="py-8 px-4 md:px-6 lg:px-20 mb-[-6rem] flex flex-col items-center">
       <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-10">{t("projects.title")}</h2>
 
       <div className="relative w-full max-w-4xl">

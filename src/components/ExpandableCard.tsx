@@ -16,24 +16,20 @@ export default function ExpandableCard({
   const [expanded, setExpanded] = React.useState(initiallyExpanded);
 
   return (
-    <div className={`relative p-8 rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-sm shadow-sm ${className}`}>
-      {/* Contenu contraint quand replié */}
-      <div className={`transition-all duration-300 ${expanded ? "" : "max-h-40 overflow-hidden"}`}>
+    <div className={`relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-sm shadow-sm ${className}`}>
+      <div className={`transition-all duration-300 ${expanded ? "" : "max-h-[10.5rem] sm:max-h-48 overflow-hidden"}`}>
         {children}
       </div>
-
-      {/* Dégradé visuel quand replié */}
       {!expanded && (
-        <div className="pointer-events-none absolute inset-x-0 bottom-16 h-16 bg-gradient-to-t from-white/80 to-transparent rounded-b-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-14 sm:bottom-16 h-12 sm:h-16 bg-gradient-to-t from-white/80 to-transparent rounded-b-2xl sm:rounded-b-3xl" />
       )}
 
-      {/* Bouton Lire plus / Read more */}
-      <div className="mt-4 flex justify-end">
+      <div className="mt-3 sm:mt-4 flex justify-end">
         <button
           type="button"
           onClick={() => setExpanded(!expanded)}
           aria-expanded={expanded}
-          className="text-sm font-medium underline underline-offset-4 hover:opacity-80"
+          className="text-xs sm:text-sm font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
         >
           {expanded ? t("ui.read_less") : t("ui.read_more")}
         </button>

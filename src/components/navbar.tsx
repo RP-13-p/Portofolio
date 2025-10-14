@@ -1,13 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Download, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const sections = ["hero", "experience", "education", "projects", "skills"];
 
   const [openLang, setOpenLang] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState(false);
   const current = i18n.language === "en" ? "EN" : "FR";
 
   const setLang = (lng: "en" | "fr") => {
@@ -15,26 +16,33 @@ export default function Navbar() {
     setOpenLang(false);
   };
 
+  const handleNavClick = () => {
+    setOpenMenu(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mt-3 mb-2 grid grid-cols-3 items-center rounded-2xl border border-white/40 bg-white/60 backdrop-blur-md shadow-navbar">
-          <div className="flex items-center gap-3 justify-start pl-3 py-2 text-gray-700">
+      <div className="mx-auto max-w-6xl px-3 sm:px-4">
+        <div className="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-white/40 bg-white/60 backdrop-blur-md shadow-navbar px-3 py-2">
+          
+          {/* Social Links - cachés sur très petit écran */}
+          <div className="hidden sm:flex items-center gap-2 md:gap-3 text-gray-700">
             <a href="https://www.linkedin.com/in/raphael-partouche-325709208" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">
-              <Linkedin />
+              <Linkedin size={20} />
             </a>
             <a href="https://github.com/RP-13-p" target="_blank" rel="noreferrer" className="hover:text-blue-600">
-              <Github />
+              <Github size={20} />
             </a>
             <a href="mailto:raphaelpartouchepcs@gmail.com" className="hover:text-blue-600">
-              <Mail />
+              <Mail size={20} />
             </a>
           </div>
 
+          {/* Menu Desktop */}
           <motion.ul
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="hidden md:flex justify-center gap-8 text-sm font-medium text-gray-700"
+            className="hidden md:flex justify-center gap-4 lg:gap-8 text-sm font-medium text-gray-700"
           >
             {sections.map((id) => (
               <li key={id}>
@@ -48,13 +56,30 @@ export default function Navbar() {
             ))}
           </motion.ul>
 
-          <div className="flex justify-end items-center gap-3 pr-3 py-2 relative text-gray-700">
-            <a href="/Resume_FALL_2025.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-1 px-2 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-sm font-medium shadow-sm transition-colors ring-0 hover:ring-1 hover:ring-black/20">
-              <span>{t("nav.resume")}</span> <Download size={18} />
+          {/* Bouton Menu Hamburger Mobile */}
+          <button
+            onClick={() => setOpenMenu(!openMenu)}
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            aria-label="Toggle menu"
+          >
+            {openMenu ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Actions (CV + Language) */}
+          <div className="flex items-center gap-2 sm:gap-3 relative text-gray-700">
+            <a 
+              href="/Resume_FALL_2025.pdf" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex items-center gap-1 px-2 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-xs sm:text-sm font-medium shadow-sm transition-colors ring-0 hover:ring-1 hover:ring-black/20"
+            >
+              <span className="hidden sm:inline">{t("nav.resume")}</span>
+              <Download size={16} className="sm:w-[18px] sm:h-[18px]" />
             </a>
+            
             <button
               onClick={() => setOpenLang((v) => !v)}
-              className="px-3 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-sm font-medium shadow-sm ring-0 hover:ring-1 hover:ring-black/20"
+              className="px-2 sm:px-3 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-xs sm:text-sm font-medium shadow-sm ring-0 hover:ring-1 hover:ring-black/20"
               aria-haspopup="listbox"
               aria-expanded={openLang}
               aria-label="Language"
@@ -65,7 +90,7 @@ export default function Navbar() {
             {openLang && (
               <ul
                 role="listbox"
-                className="absolute right-3 top-12 w-28 rounded-xl border border-gray-200 bg-white/95 shadow-lg text-sm overflow-hidden"
+                className="absolute right-0 top-12 w-24 sm:w-28 rounded-xl border border-gray-200 bg-white/95 shadow-lg text-xs sm:text-sm overflow-hidden"
               >
                 <li>
                   <button
@@ -87,6 +112,45 @@ export default function Navbar() {
             )}
           </div>
         </div>
+
+        {/* Menu Mobile Fullscreen */}
+        <AnimatePresence>
+          {openMenu && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden mt-2 rounded-2xl border border-white/40 bg-white/95 backdrop-blur-md shadow-lg overflow-hidden"
+            >
+              <ul className="flex flex-col text-center text-base font-medium text-gray-700">
+                {sections.map((id) => (
+                  <li key={id}>
+                    <a
+                      href={`#${id}`}
+                      onClick={handleNavClick}
+                      className="block py-3 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                    >
+                      {t(`nav.${id === "hero" ? "home" : id}`)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Social Links dans le menu mobile */}
+              <div className="flex sm:hidden justify-center gap-6 py-4 border-t border-gray-200 text-gray-700">
+                <a href="https://www.linkedin.com/in/raphael-partouche-325709208" target="_blank" rel="noreferrer">
+                  <Linkedin size={22} />
+                </a>
+                <a href="https://github.com/RP-13-p" target="_blank" rel="noreferrer">
+                  <Github size={22} />
+                </a>
+                <a href="mailto:raphaelpartouchepcs@gmail.com">
+                  <Mail size={22} />
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
