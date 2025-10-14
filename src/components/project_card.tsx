@@ -21,7 +21,7 @@ export default function ProjectCard({ project, onClick }: Props) {
   return (
     <article
       onClick={onClick}
-      className="cursor-pointer rounded-2xl sm:rounded-3xl border border-gray-200 bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-transform duration-300 overflow-hidden flex flex-col hover:scale-[1.01] focus:outline-none"
+      className="cursor-pointer rounded-2xl sm:rounded-3xl border border-gray-400 bg-white/70 backdrop-blur-sm shadow-lg hover:shadow-xl transition-transform duration-300 overflow-hidden flex flex-col hover:scale-[1.01] focus:outline-none"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onClick()}

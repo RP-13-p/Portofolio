@@ -16,8 +16,8 @@ const skills = [
 export default function Skills() {
   const { t } = useTranslation();
   return (
-    <section id="skills" className="py-6 sm:py-8 px-6 md:px-20 -mt-6 flex flex-col items-center">
-      <h2 className="text-3xl font-bold mb-6">{t("skills.title")}</h2>
+    <section id="skills" className="py-6 sm:py-8 px-6 md:px-20 -mt-24 flex flex-col items-center">
+      <h2 className="text-3xl font-bold mb-20">{t("skills.title")}</h2>
       <div className="relative w-[85vw] md:w-[70vw] h-[18vh] justify-center items-center overflow-hidden py-6 mx-auto">
         <div className="absolute flex animate-marquee whitespace-nowrap">
           {[...skills, ...skills].map((skill, idx) => (

@@ -5,7 +5,7 @@ import { Download, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const sections = ["hero", "experience", "education", "projects", "skills"];
+  const sections = ["hero", "experience", "projects", "education", "skills"];
 
   const [openLang, setOpenLang] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -19,11 +19,11 @@ export default function Navbar() {
   const handleNavClick = () => {
     setOpenMenu(false);
   };
-
+ 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       <div className="mx-auto max-w-6xl px-3 sm:px-4">
-        <div className="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-white/40 bg-white/60 backdrop-blur-md shadow-navbar px-3 py-2">
+        <div className="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-gray/70 bg-white/60 backdrop-blur-md shadow-navbar px-3 py-2">
           
           {/* Social Links - cachés sur très petit écran */}
           <div className="hidden sm:flex items-center gap-2 md:gap-3 text-gray-700">
@@ -38,7 +38,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Menu Desktop */}
+          
           <motion.ul
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -56,7 +56,6 @@ export default function Navbar() {
             ))}
           </motion.ul>
 
-          {/* Bouton Menu Hamburger Mobile */}
           <button
             onClick={() => setOpenMenu(!openMenu)}
             className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -65,7 +64,6 @@ export default function Navbar() {
             {openMenu ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Actions (CV + Language) */}
           <div className="flex items-center gap-2 sm:gap-3 relative text-gray-700">
             <a 
               href="/Resume_FALL_2025.pdf" 
@@ -113,7 +111,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Menu Mobile Fullscreen */}
+    
         <AnimatePresence>
           {openMenu && (
             <motion.div
@@ -136,7 +134,7 @@ export default function Navbar() {
                 ))}
               </ul>
               
-              {/* Social Links dans le menu mobile */}
+              
               <div className="flex sm:hidden justify-center gap-6 py-4 border-t border-gray-200 text-gray-700">
                 <a href="https://www.linkedin.com/in/raphael-partouche-325709208" target="_blank" rel="noreferrer">
                   <Linkedin size={22} />
