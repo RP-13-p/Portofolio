@@ -13,7 +13,7 @@ export default function Projects() {
       description: t("projects.othello.description"),
       images: ["/projects/othello/othello_1.png", "/projects/othello/othello_2.png","/projects/othello/othello_3.png","/projects/othello/othello_4.png"],
       tech: ["JavaScript", "HTML", "CSS", "Algorithms"],
-      repo: "https://github.com/temporary-link-othello"
+      repo: "https://github.com/RP-13-p/Othello_browser"
     },
     
     {
