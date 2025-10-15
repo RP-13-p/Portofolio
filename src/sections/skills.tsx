@@ -16,13 +16,13 @@ const skills = [
 export default function Skills() {
   const { t } = useTranslation();
   return (
-    <section id="skills" className="py-6 sm:py-8 px-6 md:px-20 -mt-24 flex flex-col items-center">
+    <section id="skills" className="py-8 px-6 md:px-20 flex flex-col items-center">
       <h2 className="text-3xl font-bold mb-20">{t("skills.title")}</h2>
       <div className="relative w-[85vw] md:w-[70vw] h-[18vh] justify-center items-center overflow-hidden py-6 mx-auto">
         <div className="absolute flex animate-marquee whitespace-nowrap">
           {[...skills, ...skills].map((skill, idx) => (
             <div key={idx} className="inline-block px-6 md:px-10 text-center">
-              <div className="h-[8vh] w-[8vh] grid place-items-center mx-auto">
+              <div className="h-12 w-12 sm:h-16 sm:w-16 grid place-items-center mx-auto">
                 <img
                   src={skill.image}
                   alt={skill.name}

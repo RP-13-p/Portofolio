@@ -5,8 +5,8 @@ import ExpandableCard from "../components/ExpandableCard";
 export default function Experience() {
   const { t } = useTranslation();
   return (
-    <section id="experience" className="py-8 px-4 sm:px-6 md:px-12 lg:px-20 mb-0">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{t("experience.title")}</h2>
+    <section id="experience" className="py-8 px-4 sm:px-6 md:px-12 lg:px-20">
+      <h2 className="text-2xl mb-4 sm:text-3xl font-bold mb-6 sm:mb-6">{t("experience.title")}</h2>
       <div className="space-y-6 sm:space-y-8">
 
         {/* CiviBot */}

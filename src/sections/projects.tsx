@@ -22,14 +22,12 @@ export default function Projects() {
       images: ["/projects/civibot/civibot4.png", "/projects/civibot/civibot2.png","/projects/civibot/civibot3.png"],
       tech: ["React", "FastAPI", "PostgreSQL", "i18n", "AI"],
       site: "https://civibot.io/",
-      repo: "https://github.com/yourname/civibot"
     },
     {
       title: t("projects.sightsense.title"),
       description: t("projects.sightsense.description"),
       images: ["/projects/visual_impair/visual_impair_1.png", "/projects/visual_impair/visual_impair_2.png"],
       tech: ["React", "FastAPI", "OpenAI API", "PostgreSQL"],
-      demo: "https://example.com/medbot",
       repo: "https://github.com/yourname/medbot"
     }
   ];
@@ -100,7 +98,7 @@ export default function Projects() {
       : "animate-[slideInLeft_280ms_ease-out]";
 
   return ( 
-    <section id="projects" className="py-8 px-4 md:px-6 lg:px-20  flex flex-col items-center">
+    <section id="projects" className="py-8 mt-[-12] sm:py-16 px-4 md:px-12 lg:px-20 flex flex-col items-center">
       <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-10">{t("projects.title")}</h2>
 
       <div className="relative w-full max-w-4xl">
