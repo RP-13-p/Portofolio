@@ -14,7 +14,7 @@ export default function Hero() {
           <img
             src="/portrait.jpg"
             alt="Portrait"
-            className="h-48 w-48 rounded-full object-cover shadow-lg ring-2 ring-gray-200 md:h-48 md:w-48"
+            className="h-48 w-48 md:h-56 md:w-56 rounded-full object-cover border border-black shadow-lg transition-transform duration-300 hover:scale-[1.05] hover:shadow-xl"
           />
         </div>
 

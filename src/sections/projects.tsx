@@ -34,6 +34,7 @@ export default function Projects() {
 
   const [current, setCurrent] = React.useState(0);
   const [direction, setDirection] = React.useState<"left" | "right">("right");
+  const [isAnimating, setIsAnimating] = React.useState(false);
 
   const [open, setOpen] = React.useState(false);
   const [animateModal, setAnimateModal] = React.useState(false);
@@ -41,28 +42,48 @@ export default function Projects() {
 
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
   const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
-
-  const nextProject = () => {
-    setDirection("right");
-    setCurrent((i) => (i + 1) % projects.length);
-  };
-  const prevProject = () => {
-    setDirection("left");
-    setCurrent((i) => (i - 1 + projects.length) % projects.length);
-  };
+  const [swipeOffset, setSwipeOffset] = React.useState(0);
+  const [isDragging, setIsDragging] = React.useState(false);
 
   const minSwipeDistance = 50;
+
+  const nextProject = () => {
+    if (isAnimating) return;
+    setDirection("right");
+    setIsAnimating(true);
+    setCurrent((i) => (i + 1) % projects.length);
+    setTimeout(() => setIsAnimating(false), 300);
+  };
+
+  const prevProject = () => {
+    if (isAnimating) return;
+    setDirection("left");
+    setIsAnimating(true);
+    setCurrent((i) => (i - 1 + projects.length) % projects.length);
+    setTimeout(() => setIsAnimating(false), 300);
+  };
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    const currentTouch = e.targetTouches[0].clientX;
+    setTouchEnd(currentTouch);
+    
+    if (touchStart !== null) {
+      const diff = currentTouch - touchStart;
+      // Limiter le déplacement à +/- 100px pour éviter un défilement trop important
+      setSwipeOffset(Math.max(-100, Math.min(100, diff)));
+    }
   };
 
   const onTouchEnd = () => {
+    setIsDragging(false);
+    setSwipeOffset(0);
+    
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
@@ -81,7 +102,7 @@ export default function Projects() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [isAnimating]);
 
   const openModal = () => {
     setOpen(true);
@@ -92,10 +113,26 @@ export default function Projects() {
     setTimeout(() => setOpen(false), 200);
   };
 
-  const slideClass =
-    direction === "right"
-      ? "animate-[slideInRight_280ms_ease-out]"
-      : "animate-[slideInLeft_280ms_ease-out]";
+  const getTransformStyle = () => {
+    if (isDragging) {
+      return {
+        transform: `translateX(${swipeOffset}px) scale(${1 - Math.abs(swipeOffset) * 0.0005})`,
+        transition: 'none'
+      };
+    }
+    
+    if (isAnimating) {
+      const slideDirection = direction === "right" ? "translateX(24px)" : "translateX(-24px)";
+      return {
+        animation: `slideIn${direction === "right" ? "Right" : "Left"} 300ms ease-out`
+      };
+    }
+    
+    return {
+      transform: 'translateX(0) scale(1)',
+      transition: 'transform 0.3s ease-out'
+    };
+  };
 
   return ( 
     <section id="projects" className="py-8 mt-[-12] sm:py-16 px-4 md:px-12 lg:px-20 flex flex-col items-center">
@@ -103,7 +140,8 @@ export default function Projects() {
 
       <div className="relative w-full max-w-4xl">
         <div 
-          className={`will-change-transform ${slideClass}`}
+          className="will-change-transform"
+          style={getTransformStyle()}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -113,23 +151,25 @@ export default function Projects() {
 
         <button
           onClick={prevProject}
+          disabled={isAnimating}
           aria-label={t("projects.ui.previous")}
           className="hidden lg:flex items-center justify-center
                      absolute left-[-5rem] top-1/2 -translate-y-1/2
                      h-12 w-12 rounded-full bg-white/95 backdrop-blur border border-gray-200
                      shadow-lg hover:shadow-xl hover:scale-105 active:scale-95
-                     text-gray-900 text-2xl transition"
+                     text-gray-900 text-2xl transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
           ‹
         </button>
         <button
           onClick={nextProject}
+          disabled={isAnimating}
           aria-label={t("projects.ui.next")}
           className="hidden lg:flex items-center justify-center
                      absolute right-[-5rem] top-1/2 -translate-y-1/2
                      h-12 w-12 rounded-full bg-white/95 backdrop-blur border border-gray-200
                      shadow-lg hover:shadow-xl hover:scale-105 active:scale-95
-                     text-gray-900 text-2xl transition"
+                     text-gray-900 text-2xl transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
           ›
         </button>
@@ -200,12 +240,12 @@ export default function Projects() {
 
       <style>{`
         @keyframes slideInRight {
-          from { opacity: 0; transform: translateX(24px); }
-          to   { opacity: 1; transform: translateX(0); }
+          from { opacity: 0; transform: translateX(24px) scale(0.95); }
+          to   { opacity: 1; transform: translateX(0) scale(1); }
         }
         @keyframes slideInLeft {
-          from { opacity: 0; transform: translateX(-24px); }
-          to   { opacity: 1; transform: translateX(0); }
+          from { opacity: 0; transform: translateX(-24px) scale(0.95); }
+          to   { opacity: 1; transform: translateX(0) scale(1); }
         }
       `}</style>
     </section>
