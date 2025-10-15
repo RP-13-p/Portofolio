@@ -18,22 +18,23 @@ export default function Skills() {
   return (
     <section id="skills" className="py-8 px-6 md:px-20 flex flex-col items-center">
       <h2 className="text-3xl font-bold mb-20">{t("skills.title")}</h2>
-      <div className="relative w-[85vw] md:w-[70vw] h-[18vh] justify-center items-center overflow-hidden py-6 mx-auto">
-        <div className="absolute flex animate-marquee whitespace-nowrap">
-          {[...skills, ...skills].map((skill, idx) => (
-            <div key={idx} className="inline-block px-6 md:px-10 text-center">
-              <div className="h-12 w-12 sm:h-16 sm:w-16 grid place-items-center mx-auto">
-                <img
-                  src={skill.image}
-                  alt={skill.name}
-                  className="h-full w-auto"
-                />
-              </div>
-              <p className="text-sm text-gray-700 mt-2">{skill.name}</p>
+      <div className="relative w-[90vw] md:w-[70vw] h-auto justify-center items-center overflow-hidden py-6 mx-auto">
+      <div className="absolute flex animate-marquee whitespace-nowrap">
+        {[...skills, ...skills].map((skill, idx) => (
+          <div key={idx} className="inline-block px-4 md:px-10 text-center">
+            <div className="h-12 w-12 sm:h-16 sm:w-16 grid place-items-center mx-auto">
+              <img
+                src={skill.image}
+                alt={skill.name}
+                className="h-full w-auto object-contain"
+              />
             </div>
-          ))}
-        </div>
+            <p className="text-xs sm:text-sm text-gray-700 mt-2">{skill.name}</p>
+          </div>
+        ))}
       </div>
+    </div>
+
     </section>
   );
 }
