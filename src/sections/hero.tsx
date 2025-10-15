@@ -20,9 +20,9 @@ export default function Hero() {
 
         <div className="text-center md:text-left">
           <h1 className="text-5xl font-bold mb-3">{t("hero.title")}</h1>
-          <p className="text-lg text-gray-700">{t("hero.subtitle")}</p>
+          <p className="text-lg text-gray-700 text-justify">{t("hero.subtitle")}</p>
         </div>
-      </div>
+      </div> 
     </section>
   );
 }
