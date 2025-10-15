@@ -2,24 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Global Style ---- */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-gradient-to-b from-white to-gray-50 text-gray-900 font-sans antialiased;
+  @apply text-gray-900 font-sans antialiased;
+  background: linear-gradient(to bottom, #1e3a8a 0%, #ffffff 40%);
+  background-attachment: fixed;
 }
 
-/* Navbar */
-/* nav gérée directement dans le composant */
-
-/* Sections */
 section {
   @apply min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-20 py-12 sm:py-16 lg:py-20;
 }
 
-/* Titles */
+
 h1, h2, h3 {
   @apply font-bold text-gray-900;
 }
@@ -36,7 +34,6 @@ p {
   @apply text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed;
 }
 
-/* Buttons & Links */
 a, button {
   @apply transition-colors duration-200;
 }
@@ -45,7 +42,6 @@ a:hover, button:hover {
   @apply text-blue-600;
 }
 
-/* Footer */
 footer {
   @apply bg-gray-100 border-t border-gray-200 text-center py-4 sm:py-6 text-gray-700;
 }

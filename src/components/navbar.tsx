@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       <div className="mx-auto max-w-6xl px-3 sm:px-4">
-        <div className="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-gray/70 bg-white/60 backdrop-blur-md shadow-navbar px-3 py-2">
+        <div className="mt-3 mb-2 flex items-center justify-between rounded-2xl border border-black/70 bg-white/60 backdrop-blur-md shadow-navbar px-3 py-2">
           
           {/* Social Links - cachés sur très petit écran */}
           <div className="hidden sm:flex items-center gap-2 md:gap-3 text-gray-700">
@@ -88,11 +88,11 @@ export default function Navbar() {
             {openLang && (
               <ul
                 role="listbox"
-                className="absolute right-0 top-12 w-24 sm:w-28 rounded-xl border border-gray-200 bg-white/95 shadow-lg text-xs sm:text-sm overflow-hidden"
+                className="absolute right-0 top-12 w-24 sm:w-28 rounded-xl border border-black-200 bg-white/95 shadow-lg text-xs sm:text-sm overflow-hidden"
               >
                 <li>
                   <button
-                    className={`w-full text-left px-3 py-2 hover:bg-gray-50 ${current === "FR" ? "font-semibold" : ""}`}
+                    className={`w-full text-left px-3 py-2 hover:bg-black-50 ${current === "FR" ? "font-semibold" : ""}`}
                     onClick={() => setLang("fr")}
                   >
                     FR
@@ -100,7 +100,7 @@ export default function Navbar() {
                 </li>
                 <li>
                   <button
-                    className={`w-full text-left px-3 py-2 hover:bg-gray-50 ${current === "EN" ? "font-semibold" : ""}`}
+                    className={`w-full text-left px-3 py-2 hover:bg-black-50 ${current === "EN" ? "font-semibold" : ""}`}
                     onClick={() => setLang("en")}
                   >
                     EN

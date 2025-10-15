@@ -16,7 +16,7 @@ export default function ExpandableCard({
   const [expanded, setExpanded] = React.useState(initiallyExpanded);
 
   return (
-    <div className={`relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-gray-300 bg-white/70 backdrop-blur-sm shadow-sm ${className}`}>
+    <div className={`relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-black-300 bg-white/70 backdrop-blur-sm shadow-sm ${className}`}>
       <div className={`transition-all duration-300 ${expanded ? "" : "max-h-[10.5rem] sm:max-h-48 overflow-hidden"}`}>
         {children}
       </div>

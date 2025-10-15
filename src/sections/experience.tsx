@@ -5,7 +5,7 @@ import ExpandableCard from "../components/ExpandableCard";
 export default function Experience() {
   const { t } = useTranslation();
   return (
-    <section id="experience" className="py-8 px-4 sm:px-6 md:px-12 lg:px-20">
+    <section id="experience" className="py-8 px-4 sm:px-6 md:px-12 lg:px-20 flex flex-col items-center">
       <h2 className="text-2xl mb-4 sm:text-3xl font-bold mb-6 sm:mb-6">{t("experience.title")}</h2>
       <div className="space-y-6 sm:space-y-8">
 
