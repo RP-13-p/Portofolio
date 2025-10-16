@@ -1,16 +1,22 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
   const { t } = useTranslation();
+  const titleText = t("hero.title");
+  const [isTypingDone, setIsTypingDone] = React.useState(false);
+
+  // Calculer le délai total pour synchroniser les animations
+  const totalTypingDuration = titleText.length * 0.1;
 
   return (
     <section
       id="hero"
-      className="flex min-h-screen items-center justify-center px-4 py-16"
+      className="flex min-h-screen items-center justify-center px-4 py-16 pt-24"
     >
-      <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-8 md:grid-cols-[auto,1fr]">
-        <div className="flex justify-center md:justify-start">
+      <div className="mx-auto flex w-full max-w-5xl flex-col md:flex-row items-center gap-8">
+        <div className="flex-shrink-0">
           <img
             src="/portrait.jpg"
             alt="Portrait"
@@ -18,9 +24,55 @@ export default function Hero() {
           />
         </div>
 
-        <div className="text-center md:text-left">
-          <h1 className="text-5xl font-bold mb-3">{t("hero.title")}</h1>
-          <p className="text-lg text-gray-700 text-justify">{t("hero.subtitle")}</p>
+        <div className="flex-grow text-center md:text-left">
+          <motion.h1 
+              className="text-5xl font-bold mb-3"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+            >
+              <AnimatePresence>
+                {titleText.split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ 
+                      opacity: 0,
+                      y: -20,
+                    }}
+                    animate={{ 
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      type: "spring",
+                      damping: 10,
+                      stiffness: 100,
+                      duration: 0.3,
+                      delay: index * 0.1,
+                    }}
+                    onAnimationComplete={() => {
+                      if (index === titleText.length - 1) {
+                        setIsTypingDone(true);
+                      }
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </AnimatePresence>
+            </motion.h1>
+          <motion.p 
+            className="text-lg text-gray-700 text-justify"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              damping: 12,
+              stiffness: 100,
+              delay: totalTypingDuration + 0.3,
+            }}
+          >
+            {t("hero.subtitle")}
+          </motion.p>
         </div>
       </div> 
     </section>
