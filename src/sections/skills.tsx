@@ -5,6 +5,7 @@ const skills = [
   { name: "JavaScript", image: "/skills/js.svg" },
   { name: "TypeScript", image: "/skills/ts.svg" },
   { name: "React", image: "/skills/react.svg" },
+  { name: "Git", image: "/skills/github.svg" },
   { name: "Cloud", image: "/skills/cloud.svg" },
   { name: "TailwindCSS", image: "/skills/tailwind.svg" },
   { name: "Python", image: "/skills/python.svg" },

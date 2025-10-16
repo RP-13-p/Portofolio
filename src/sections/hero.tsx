@@ -7,7 +7,29 @@ export default function Hero() {
   const titleText = t("hero.title");
   const [isTypingDone, setIsTypingDone] = React.useState(false);
   const [shouldAnimate, setShouldAnimate] = React.useState(false);
+  const [displayedText, setDisplayedText] = React.useState("");
   const sectionRef = React.useRef(null);
+
+  // Observer pour détecter quand la section est visible
+  // Effet pour l'animation de typing
+  React.useEffect(() => {
+    if (shouldAnimate) {
+      let currentIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (currentIndex <= titleText.length) {
+          setDisplayedText(titleText.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(typingInterval);
+          setIsTypingDone(true);
+        }
+      }, 70); // Vitesse de frappe plus rapide
+
+      return () => clearInterval(typingInterval);
+    } else {
+      setDisplayedText("");
+    }
+  }, [shouldAnimate, titleText]);
 
   // Observer pour détecter quand la section est visible
   React.useEffect(() => {
@@ -23,7 +45,8 @@ export default function Hero() {
         });
       },
       {
-        threshold: 0.3, // Déclenche quand 30% de la section est visible
+        threshold: 0.1, // Déclenche quand 10% de la section est visible
+        rootMargin: "-50px 0px" // Marge négative pour éviter les déclenchements trop tôt
       }
     );
 
@@ -45,7 +68,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="flex min-h-screen items-center justify-center px-4 py-16 pt-24"
+      className="flex min-h-screen items-center justify-center px-4 py-16 pt-24 will-change-transform"
     >
       <div className="mx-auto flex w-full max-w-5xl flex-col md:flex-row items-center gap-8">
         <div className="flex-shrink-0">
@@ -58,39 +81,32 @@ export default function Hero() {
 
         <div className="flex-grow text-center md:text-left">
           <motion.h1 
-              className="text-5xl font-bold mb-3"
+              className="text-5xl font-bold mb-3 relative"
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
             >
-              <AnimatePresence mode="wait">
-                {shouldAnimate && titleText.split("").map((char, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ 
-                      opacity: 0,
-                      y: -20,
-                    }}
-                    animate={{ 
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      type: "spring",
-                      damping: 10,
-                      stiffness: 100,
-                      duration: 0.3,
-                      delay: index * 0.1,
-                    }}
-                    onAnimationComplete={() => {
-                      if (index === titleText.length - 1) {
-                        setIsTypingDone(true);
-                      }
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </AnimatePresence>
+              <span className="relative">
+                {shouldAnimate && (
+                  <>
+                    {displayedText}
+                    <motion.span
+                      className="inline-block w-[2px] h-[1.2em] bg-black ml-[2px] absolute"
+                      animate={{
+                        opacity: [1, 0, 1],
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      style={{
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                      }}
+                    />
+                  </>
+                )}
+              </span>
             </motion.h1>
           <motion.p 
             className="text-lg text-gray-700 text-justify"
