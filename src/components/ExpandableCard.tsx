@@ -22,14 +22,23 @@ export default function ExpandableCard({
         } ${className}`}
       >
         <div
-          className={`transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden ${
-            expanded ? "max-h-[2000px] opacity-100" : "max-h-[10.5rem] sm:max-h-48 opacity-90"
+          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            expanded ? 'max-h-[2000px]' : 'sm:max-h-48'
           }`}
         >
-          {children}
+          {React.Children.map(children, child => {
+            if (React.isValidElement(child)) {
+              return React.cloneElement(child, {
+                className: `${child.props.className || ''} ${
+                  !expanded ? '[&_.mobile-description]:hidden sm:[&_.mobile-description]:block' : ''
+                }`
+              });
+            }
+            return child;
+          })}
         </div>
         {!expanded && (
-          <div className="pointer-events-none absolute inset-x-0 bottom-14 sm:bottom-16 h-12 sm:h-16 bg-gradient-to-t from-white/80 to-transparent rounded-b-2xl sm:rounded-b-3xl" />
+          <div className="hidden sm:block pointer-events-none absolute inset-x-0 bottom-12 sm:bottom-16 h-16 bg-gradient-to-t from-white/80 to-transparent rounded-b-2xl sm:rounded-b-3xl" />
         )}
 
         <div className="mt-3 sm:mt-4 flex justify-end">

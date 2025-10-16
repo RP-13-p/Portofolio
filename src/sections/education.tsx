@@ -19,13 +19,13 @@ export default function Education() {
             />
             <div className="flex-1">
               <h3 className="text-xl sm:text-2xl font-semibold text-center sm:text-left">{t("education.eurecom.title")}</h3>
-              <p className="text-sm sm:text-base text-gray-700 text-center sm:text-left">{t("education.eurecom.subtitle")}</p>
-              <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
+              <p className="text-sm sm:text-base text-gray-700 text-center sm:text-left mb-1">{t("education.eurecom.subtitle")}</p>
+              <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left mb-2">
                 {t("education.eurecom.year")} • {t("education.eurecom.city")}
               </p>
 
               {/* Description avec paragraphes + mise en forme */}
-              <div className="mt-2 text-sm sm:text-base text-gray-600 text-justify leading-relaxed space-y-2 sm:space-y-3">
+              <div className="sm:block mt-1 sm:mt-2 text-sm sm:text-base text-gray-600 text-justify leading-relaxed space-y-1 sm:space-y-3 mobile-description">
                 {t("education.eurecom.description")
                   .split("\n\n")
                   .map((para, i) => (
@@ -55,11 +55,11 @@ export default function Education() {
             />
             <div className="flex-1">
               <h3 className="text-xl sm:text-2xl font-semibold text-center sm:text-left">{t("education.jacques.title")}</h3>
-              <p className="text-sm sm:text-base text-gray-700 text-center sm:text-left">{t("education.jacques.subtitle")}</p>
-              <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
+              <p className="text-sm sm:text-base text-gray-700 text-center sm:text-left mb-1">{t("education.jacques.subtitle")}</p>
+              <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left mb-2">
                 {t("education.jacques.year")} • {t("education.jacques.city")}
               </p>
-              <div className="mt-2 text-sm sm:text-base text-gray-600 text-justify leading-relaxed space-y-2 sm:space-y-3">
+              <div className="sm:block mt-1 sm:mt-2 text-sm sm:text-base text-gray-600 text-justify leading-relaxed space-y-1 sm:space-y-3 mobile-description">
                 {t("education.jacques.description")
                   .split("\n\n")
                   .map((para, i) => (

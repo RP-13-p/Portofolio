@@ -7,6 +7,13 @@ export default function Projects() {
   const { t } = useTranslation();
   
   const projects: Project[] = [
+    {
+      title: t("projects.civibot.title"),
+      description: t("projects.civibot.description"),
+      images: ["/projects/civibot/civibot4.png", "/projects/civibot/civibot2.png","/projects/civibot/civibot3.png"],
+      tech: ["React", "FastAPI", "PostgreSQL", "i18n", "AI"],
+      site: "https://civibot.io/",
+    },
     
     {
       title: t("projects.othello.title"),
@@ -16,13 +23,6 @@ export default function Projects() {
       repo: "https://github.com/RP-13-p/Othello_browser"
     },
     
-    {
-      title: t("projects.civibot.title"),
-      description: t("projects.civibot.description"),
-      images: ["/projects/civibot/civibot4.png", "/projects/civibot/civibot2.png","/projects/civibot/civibot3.png"],
-      tech: ["React", "FastAPI", "PostgreSQL", "i18n", "AI"],
-      site: "https://civibot.io/",
-    },
     {
       title: t("projects.sightsense.title"),
       description: t("projects.sightsense.description"),
@@ -75,7 +75,6 @@ export default function Projects() {
     
     if (touchStart !== null) {
       const diff = currentTouch - touchStart;
-      // Limiter le déplacement à +/- 100px pour éviter un défilement trop important
       setSwipeOffset(Math.max(-100, Math.min(100, diff)));
     }
   };
