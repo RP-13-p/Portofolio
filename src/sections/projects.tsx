@@ -14,7 +14,7 @@ export default function Projects() {
       tech: ["React", "FastAPI", "PostgreSQL", "i18n", "AI"],
       site: "https://civibot.io/",
     },
-    
+
     {
       title: t("projects.othello.title"),
       description: t("projects.othello.description"),
@@ -203,34 +203,35 @@ export default function Projects() {
               </button>
             </div>
 
-            <div className="flex-shrink-0">
-              <ModalCarousel images={project.images} t={t} />
-            </div>
+            <div className="overflow-y-auto">
+              <div>
+                <ModalCarousel images={project.images} t={t} />
+                <div className="px-6 py-5">
+                  <div className="text-gray-700 text-base leading-relaxed text-justify space-y-4 mb-6">
+                    {project.description.split("\n\n").map((p, i) => (
+                      <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                    ))}
+                  </div>
 
-            <div className="px-6 py-5 flex-1 overflow-y-auto">
-              <div className="text-gray-700 text-base leading-relaxed text-justify space-y-4 mb-6">
-                {project.description.split("\n\n").map((p, i) => (
-                  <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
-                ))}
-              </div>
-
-              <div className="flex gap-4 justify-center">
-                {project.site && (
-                  <button
-                    onClick={() => window.open(project.site!, '_blank', 'noopener,noreferrer')}
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2"
-                  >
-                   {t("projects.ui.visit_site")}
-                  </button>
-                )}
-                {project.repo && (
-                  <button
-                    onClick={() => window.open(project.repo!, '_blank', 'noopener,noreferrer')}
-                    className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-medium flex items-center gap-2"
-                  >
-                  <Github className="w-5 h-5" />{t("projects.ui.view_repo")}
-                  </button>
-                )}
+                  <div className="flex gap-4 justify-center">
+                    {project.site && (
+                      <button
+                        onClick={() => window.open(project.site!, '_blank', 'noopener,noreferrer')}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2"
+                      >
+                       {t("projects.ui.visit_site")}
+                      </button>
+                    )}
+                    {project.repo && (
+                      <button
+                        onClick={() => window.open(project.repo!, '_blank', 'noopener,noreferrer')}
+                        className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-medium flex items-center gap-2"
+                      >
+                      <Github className="w-5 h-5" />{t("projects.ui.view_repo")}
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
