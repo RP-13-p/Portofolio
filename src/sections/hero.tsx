@@ -92,45 +92,15 @@ export default function Hero() {
                 ))}
               </AnimatePresence>
             </motion.h1>
-            <AnimatePresence mode="wait">
-              {shouldAnimate && isTypingDone && (
-                <motion.p 
-                  className="text-lg text-gray-700 text-justify"
-                >
-                  {t("hero.subtitle").split("").map((char, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ 
-                        opacity: 0,
-                        y: -10,
-                      }}
-                      animate={{ 
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                        duration: 0.2,
-                        delay: index * 0.03,
-                      }}
-                    >
-                      {char}
-                    </motion.span>
-                  ))}
-                </motion.p>
-              )}
-            </AnimatePresence>
           <motion.p 
             className="text-lg text-gray-700 text-justify"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               type: "spring",
-              damping: 12,
-              stiffness: 100,
-              delay: totalTypingDuration + 0.3,
+              damping: 20,
+              stiffness: 180,
+              delay: totalTypingDuration + 0.1,
             }}
           >
             {t("hero.subtitle")}
