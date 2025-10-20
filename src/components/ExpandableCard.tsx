@@ -15,11 +15,14 @@ export default function ExpandableCard({
   const { t } = useTranslation();
   const [expanded, setExpanded] = React.useState(initiallyExpanded);
 
+  const toggleExpanded = () => setExpanded(!expanded);
+
   return (
     <div
-        className={`relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-black bg-white/70 backdrop-blur-sm shadow-sm transform transition-all duration-500 ease-in-out ${
-          expanded ? "scale-[1.02] shadow-md" : "scale-100"
+        className={`relative p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-black bg-white/70 backdrop-blur-sm shadow-sm transform transition-all duration-500 ease-in-out cursor-pointer ${
+          expanded ? "scale-[1.02] shadow-md" : "scale-100 hover:shadow-md hover:scale-[1.01]"
         } ${className}`}
+        onClick={toggleExpanded}
       >
         <div
           className={`transition-all duration-500 ease-in-out overflow-hidden ${
@@ -44,7 +47,10 @@ export default function ExpandableCard({
         <div className="mt-3 sm:mt-4 flex justify-end">
           <button
             type="button"
-            onClick={() => setExpanded(!expanded)}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleExpanded();
+            }}
             aria-expanded={expanded}
             className="text-xs sm:text-sm font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
           >

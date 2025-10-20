@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import {Github} from "lucide-react";
 import ProjectCard, { Project } from "../components/project_card";
+import ScrollReveal from "../components/ScrollReveal";
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -135,18 +136,21 @@ export default function Projects() {
 
   return ( 
     <section id="projects" className="py-8 mt-[-12] sm:py-16 px-4 md:px-12 lg:px-20 flex flex-col items-center">
-      <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-10">{t("projects.title")}</h2>
+      <ScrollReveal>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-10">{t("projects.title")}</h2>
+      </ScrollReveal>
 
-      <div className="relative w-full max-w-4xl">
-        <div 
-          className="will-change-transform"
-          style={getTransformStyle()}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
-        >
-          <ProjectCard project={project} onClick={openModal} />
-        </div>
+      <ScrollReveal delay={0.2} className="w-full max-w-4xl">
+        <div className="relative w-full">
+          <div 
+            className="will-change-transform"
+            style={getTransformStyle()}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
+            <ProjectCard project={project} onClick={openModal} />
+          </div>
 
         <button
           onClick={prevProject}
@@ -176,7 +180,8 @@ export default function Projects() {
         <p className="text-center text-sm text-gray-500 mt-4">
           {current + 1} / {projects.length}
         </p>
-      </div>
+        </div>
+      </ScrollReveal>
 
       {open && (
         <div

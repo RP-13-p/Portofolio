@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import ScrollReveal from "../components/ScrollReveal";
 
 const skills = [
   { name: "JavaScript", image: "/skills/js.svg" },
@@ -18,9 +19,12 @@ export default function Skills() {
   const { t } = useTranslation();
   return (
     <section id="skills" className="flex flex-col items-center justify-start px-4 py-8 sm:px-6 md:px-20">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">{t("skills.title")}</h2>
-      <div className="relative w-[85vw] md:w-[70vw] h-auto justify-center items-center overflow-hidden py-6 mx-auto">
-        <div className="flex animate-[marquee_12s_linear_infinite_alternate] whitespace-nowrap items-center">
+      <ScrollReveal>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">{t("skills.title")}</h2>
+      </ScrollReveal>
+      <ScrollReveal delay={0.2} className="w-full">
+        <div className="relative w-[85vw] md:w-[70vw] h-auto justify-center items-center overflow-hidden py-6 mx-auto">
+          <div className="flex animate-[marquee_12s_linear_infinite_alternate] whitespace-nowrap items-center">
           {skills.map((skill, idx) => (
             <div key={idx} className="inline-block px-4 md:px-10 text-center">
               <div className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 grid place-items-center mx-auto">
@@ -35,6 +39,7 @@ export default function Skills() {
           ))}
         </div>
       </div>
+      </ScrollReveal>
 
       <style>{`
         @keyframes marquee {
