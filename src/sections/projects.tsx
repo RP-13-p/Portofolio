@@ -136,12 +136,10 @@ export default function Projects() {
 
   return ( 
     <section id="projects" className="py-8 mt-[-12] sm:py-16 px-4 md:px-12 lg:px-20 flex flex-col items-center">
-      <ScrollReveal>
+      <ScrollReveal className="w-full flex flex-col items-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-10">{t("projects.title")}</h2>
-      </ScrollReveal>
 
-      <ScrollReveal delay={0.2} className="w-full max-w-4xl">
-        <div className="relative w-full">
+        <div className="relative w-full max-w-4xl">
           <div 
             className="will-change-transform"
             style={getTransformStyle()}

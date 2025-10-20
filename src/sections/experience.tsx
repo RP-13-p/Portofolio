@@ -7,13 +7,11 @@ export default function Experience() {
   const { t } = useTranslation();
   return (
     <section id="experience" className="flex flex-col items-center justify-start px-4 py-16 sm:px-6 md:px-12 lg:px-20">
-      <ScrollReveal>
+      <ScrollReveal className="flex flex-col items-center w-full">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">{t("experience.title")}</h2>
-      </ScrollReveal>
-      <div className="w-full max-w-4xl space-y-4 sm:space-y-6">
+        <div className="w-full max-w-4xl space-y-4 sm:space-y-6">
 
-        {/* CiviBot */}
-        <ScrollReveal delay={0.2}>
+          {/* CiviBot */}
           <ExpandableCard>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
               <img
@@ -35,10 +33,8 @@ export default function Experience() {
               </div>
             </div>
           </ExpandableCard>
-        </ScrollReveal>
 
-        {/* Water ID */}
-        <ScrollReveal delay={0.3}>
+          {/* Water ID */}
           <ExpandableCard>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
               <img
@@ -58,9 +54,9 @@ export default function Experience() {
               </div>
             </div>
           </ExpandableCard>
-        </ScrollReveal>
 
-      </div>
+        </div>
+      </ScrollReveal>
     </section>
   );
 }

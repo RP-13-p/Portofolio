@@ -19,10 +19,8 @@ export default function Skills() {
   const { t } = useTranslation();
   return (
     <section id="skills" className="flex flex-col items-center justify-start px-4 py-8 sm:px-6 md:px-20">
-      <ScrollReveal>
+      <ScrollReveal className="w-full flex flex-col items-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">{t("skills.title")}</h2>
-      </ScrollReveal>
-      <ScrollReveal delay={0.2} className="w-full">
         <div className="relative w-[85vw] md:w-[70vw] h-auto justify-center items-center overflow-hidden py-6 mx-auto">
           <div className="flex animate-[marquee_12s_linear_infinite_alternate] whitespace-nowrap items-center">
           {skills.map((skill, idx) => (
