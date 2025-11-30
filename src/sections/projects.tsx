@@ -17,6 +17,14 @@ export default function Projects() {
     },
 
     {
+      title: t("projects.realestate.title"),
+      description: t("projects.realestate.description"),
+      images: ["/projects/real_estate/real_estate_1.png", "/projects/real_estate/real_estate_2.png"],
+      tech: ["Python", "scikit-learn", "FastAPI", "React", "Pandas"],
+      repo: "https://github.com/RP-13-p/RealEstate_Price"
+    },
+
+    {
       title: t("projects.othello.title"),
       description: t("projects.othello.description"),
       images: ["/projects/othello/othello_1.png", "/projects/othello/othello_2.png","/projects/othello/othello_3.png","/projects/othello/othello_4.png"],
@@ -31,6 +39,7 @@ export default function Projects() {
       tech: ["React", "FastAPI", "OpenAI API", "PostgreSQL"],
       repo: "https://github.com/yourname/medbot"
     }
+  
   ];
 
   const [current, setCurrent] = React.useState(0);
@@ -96,13 +105,18 @@ export default function Projects() {
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") nextProject();
-      if (e.key === "ArrowLeft") prevProject();
-      if (e.key === "Escape") setOpen(false);
+      if (!open) {
+        if (e.key === "ArrowRight") nextProject();
+        if (e.key === "ArrowLeft") prevProject();
+      } else {
+        if (e.key === "ArrowRight") nextProjectInModal();
+        if (e.key === "ArrowLeft") prevProjectInModal();
+      }
+      if (e.key === "Escape") closeModal();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [isAnimating]);
+  }, [isAnimating, open]);
 
   const openModal = () => {
     setOpen(true);
@@ -111,6 +125,16 @@ export default function Projects() {
   const closeModal = () => {
     setAnimateModal(false);
     setTimeout(() => setOpen(false), 200);
+  };
+
+  const nextProjectInModal = () => {
+    setDirection("right");
+    setCurrent((i) => (i + 1) % projects.length);
+  };
+
+  const prevProjectInModal = () => {
+    setDirection("left");
+    setCurrent((i) => (i - 1 + projects.length) % projects.length);
   };
 
   const getTransformStyle = () => {
@@ -190,6 +214,20 @@ export default function Projects() {
           aria-modal="true"
           onClick={(e) => e.target === e.currentTarget && closeModal()}
         >
+          {/* Flèche gauche pour projet précédent */}
+          <button
+            onClick={prevProjectInModal}
+            aria-label={t("projects.ui.previous")}
+            className="hidden md:flex items-center justify-center
+                       absolute left-4 lg:left-8 top-1/2 -translate-y-1/2
+                       h-14 w-14 rounded-full bg-white/95 backdrop-blur border border-gray-300
+                       shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95
+                       text-gray-900 text-3xl font-bold transition-all duration-200 z-10
+                       hover:bg-white"
+          >
+            ‹
+          </button>
+
           <div
             className={`relative w-full max-w-5xl max-h-[95vh] md:max-h-[90vh] rounded-none md:rounded-2xl bg-white shadow-xl overflow-hidden flex flex-col
                         transform transition-transform duration-150
@@ -238,6 +276,20 @@ export default function Projects() {
               </div>
             </div>
           </div>
+
+          {/* Flèche droite pour projet suivant */}
+          <button
+            onClick={nextProjectInModal}
+            aria-label={t("projects.ui.next")}
+            className="hidden md:flex items-center justify-center
+                       absolute right-4 lg:right-8 top-1/2 -translate-y-1/2
+                       h-14 w-14 rounded-full bg-white/95 backdrop-blur border border-gray-300
+                       shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95
+                       text-gray-900 text-3xl font-bold transition-all duration-200 z-10
+                       hover:bg-white"
+          >
+            ›
+          </button>
         </div>
       )}
 
