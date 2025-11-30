@@ -66,7 +66,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-3 relative text-gray-700">
             <a 
-              href="/Resume_FALL_2025.pdf" 
+              href="/CV_Dec_2025.pdf" 
               target="_blank" 
               rel="noreferrer" 
               className="flex items-center gap-1 px-2 py-1.5 rounded-xl border border-black/20 hover:border-black/30 bg-white/80 hover:bg-white text-xs sm:text-sm font-medium shadow-sm transition-colors ring-0 hover:ring-1 hover:ring-black/20"
