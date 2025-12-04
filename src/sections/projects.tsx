@@ -19,7 +19,7 @@ export default function Projects() {
     {
       title: t("projects.realestate.title"),
       description: t("projects.realestate.description"),
-      images: ["/projects/real_estate/real_estate_1.png", "/projects/real_estate/real_estate_2.png"],
+      images: ["/projects/real_estate/real_estate_1.png", "/projects/real_estate/real_estate_2.png","/projects/real_estate/real_estate_4.png","/projects/real_estate/real_estate_3.png"],
       tech: ["Python", "scikit-learn", "FastAPI", "React", "Pandas"],
       repo: "https://github.com/RP-13-p/RealEstate_Price"
     },
