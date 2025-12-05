@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import {Github} from "lucide-react";
+import {Github, Globe} from "lucide-react";
 import ProjectCard, { Project } from "../components/project_card";
 import ScrollReveal from "../components/ScrollReveal";
 
@@ -21,7 +21,8 @@ export default function Projects() {
       description: t("projects.realestate.description"),
       images: ["/projects/real_estate/real_estate_1.png", "/projects/real_estate/real_estate_2.png","/projects/real_estate/real_estate_4.png","/projects/real_estate/real_estate_3.png"],
       tech: ["Python", "scikit-learn", "FastAPI", "React", "Pandas"],
-      repo: "https://github.com/RP-13-p/RealEstate_Price"
+      repo: "https://github.com/RP-13-p/RealEstate_Price",
+      site: "https://real-estate-price-nine.vercel.app/",
     },
 
     {
@@ -260,7 +261,7 @@ export default function Projects() {
                         onClick={() => window.open(project.site!, '_blank', 'noopener,noreferrer')}
                         className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium flex items-center gap-2"
                       >
-                       {t("projects.ui.visit_site")}
+                        <Globe className="w-5 h-5" />{t("projects.ui.visit_site")}
                       </button>
                     )}
                     {project.repo && (
