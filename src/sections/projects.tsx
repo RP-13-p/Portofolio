@@ -58,6 +58,16 @@ export default function Projects() {
 
   const minSwipeDistance = 50;
 
+  // Précharger toutes les images des projets
+  React.useEffect(() => {
+    projects.forEach(project => {
+      project.images.forEach(imageSrc => {
+        const img = new Image();
+        img.src = imageSrc;
+      });
+    });
+  }, []);
+
   const nextProject = () => {
     if (isAnimating) return;
     setDirection("right");
@@ -320,6 +330,8 @@ function ModalCarousel({ images, t }: { images: string[]; t: (key: string) => st
         src={images[i]}
         alt={`slide ${i + 1}`}
         className="w-full h-64 object-contain bg-white transition-opacity duration-300"
+        loading="eager"
+        decoding="async"
       />
       {images.length > 1 && (
         <>

@@ -30,6 +30,8 @@ export default function ProjectCard({ project, onClick }: Props) {
         src={cover} 
         alt={project.title} 
         className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-contain bg-white" 
+        loading="eager"
+        decoding="async"
       />
       <div className="p-4 sm:p-6">
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center">
