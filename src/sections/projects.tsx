@@ -20,7 +20,7 @@ export default function Projects() {
     {
       title: t("projects.pycime.title"),
       description: t("projects.pycime.description"),
-      images: ["/projects/"],
+      images: ["/projects/Pycime/pycime_1.png", "/projects/Pycime/pycime_2.png","/projects/Pycime/pycime_3.png","/projects/Pycime/pycime_4.png","/projects/Pycime/pycime_5.png"],
       tech: ["Python", "scikit-learn", "FastAPI", "React", "Pandas"],
       site: "https://real-estate-price-nine.vercel.app/",
       logo : "/projects/Pycime/logo_pycime.png"
