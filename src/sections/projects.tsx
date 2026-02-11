@@ -14,8 +14,18 @@ export default function Projects() {
       images: ["/projects/civibot/civibot4.png", "/projects/civibot/civibot2.png","/projects/civibot/civibot3.png"],
       tech: ["React", "FastAPI", "PostgreSQL", "i18n", "AI"],
       site: "https://civibot.io/",
+      logo : "/projects/civibot/logo_civi.png",
     },
 
+    {
+      title: t("projects.pycime.title"),
+      description: t("projects.pycime.description"),
+      images: ["/projects/"],
+      tech: ["Python", "scikit-learn", "FastAPI", "React", "Pandas"],
+      site: "https://real-estate-price-nine.vercel.app/",
+      logo : "/projects/Pycime/logo_pycime.png"
+    },
+  
     {
       title: t("projects.realestate.title"),
       description: t("projects.realestate.description"),
@@ -24,7 +34,6 @@ export default function Projects() {
       repo: "https://github.com/RP-13-p/RealEstate_Price",
       site: "https://real-estate-price-nine.vercel.app/",
     },
-
     {
       title: t("projects.othello.title"),
       description: t("projects.othello.description"),
@@ -244,16 +253,25 @@ export default function Projects() {
                         transform transition-transform duration-150
                         ${animateModal ? "scale-100" : "scale-95"}`}
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 flex-shrink-0">
-              <h3 className="text-xl font-semibold text-center w-full">{project.title}</h3>
-              <button
-                onClick={closeModal}
-                aria-label={t("projects.ui.close")}
-                className="rounded-full p-2 hover:bg-gray-100"
-              >
-                ✕
-              </button>
+          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 flex-shrink-0">
+            <div className="flex items-center gap-3 flex-1 justify-center">
+              {project.logo && (
+                <img 
+                  src={project.logo} 
+                  alt={`${project.title} logo`}
+                  className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-contain flex-shrink-0"
+                />
+              )}
+              <h3 className="text-xl font-semibold">{project.title}</h3>
             </div>
+            <button
+              onClick={closeModal}
+              aria-label={t("projects.ui.close")}
+              className="rounded-full p-2 hover:bg-gray-100 flex-shrink-0"
+            >
+              ✕
+            </button>
+          </div>
 
             <div className="overflow-y-auto">
               <div>
