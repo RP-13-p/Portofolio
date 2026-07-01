@@ -4,6 +4,7 @@
     "education": "Formation",
     "experience": "Expérience",
     "projects": "Projets",
+    "publications": "Publications",
     "contact": "Contact",
     "skills": "Compétences",
     "resume": "CV"
@@ -91,6 +92,21 @@
       "previous_image": "Image précédente",
       "next_image": "Image suivante",
       "visit_site": "Consulter le site",
+      "view_repo": "Voir le repository"
+    }
+  },
+  "publications": {
+    "title": "Publications",
+    "article1": {
+      "title": "Analyse des Hallucinations dans les Systèmes RAG et GraphRAG",
+      "description": "Les grands modèles de langage (LLM) augmentés par des mécanismes de recherche d’information (retrieval) sont de plus en plus utilisés pour répondre à des questions en domaine ouvert, mais ils restent sujets aux hallucinations, c’est-à-dire à la génération d’affirmations qui ne sont pas étayées par les informations récupérées. Ce projet étudie empiriquement l’influence du mécanisme de recherche lui-même sur la fréquence, la nature et les différents types d’hallucinations produits par un LLM lorsqu’il répond à des questions à partir d’une base de connaissances fixe. Nous comparons le RAG classique, qui récupère des fragments de texte à l’aide de la similarité entre vecteurs denses, au GraphRAG, qui récupère des faits typés issus d’un graphe de connaissances via une similarité cosinus appliquée à des triplets verbalisés. Pour cela, nous avons enrichi deux jeux de données complémentaires, Text2KGBench-LettrIA et OSKGC, avec 547 paires question-réponse validées couvrant des raisonnements à un ou plusieurs sauts. Nous avons également implémenté six pipelines partageant le même modèle générateur (deux approches de référence, trois variantes hybrides avec reranking par cross-encoder et une variante utilisant le découpage parent-enfant des documents) et les avons évalués avec le framework MIRAGE en utilisant FactCC ainsi qu’une métrique de correction basée sur SentenceBERT. Les résultats montrent que le pipeline textuel hybride avec reranking par cross-encoder obtient les meilleures performances moyennes en termes de fidélité aux sources et de qualité des réponses, même si son amélioration par rapport au RAG classique reste incluse dans les intervalles de confiance. La différence statistiquement significative se situe principalement entre les pipelines textuels et GraphRAG. GraphRAG présente trois principaux modes d’échec : l’abstention sur les nœuds feuilles, un manque de contexte pour les raisonnements multi-sauts et une inadéquation de forme avec l’évaluateur basé sur le texte. Un nouveau pipeline hybride Graph-Chunk atténue partiellement ces limitations en fusionnant des fragments de texte et des triplets du graphe de connaissances, obtenant ainsi le plus faible taux d’abstention parmi toutes les approches évaluées. L’objectif de cette étude n’est pas d’éliminer les hallucinations, mais de caractériser dans quelles situations, pour quelles raisons et sous quelles formes elles apparaissent selon chaque paradigme."
+    },
+    "ui": {
+      "previous": "Publication précédente",
+      "next": "Publication suivante",
+      "close": "Fermer",
+      "view_article": "Voir l'article",
+      "download": "Télécharger",
       "view_repo": "Voir le repository"
     }
   },

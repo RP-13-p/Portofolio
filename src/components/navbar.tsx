@@ -5,7 +5,7 @@ import { Download, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const sections = ["hero", "experience", "projects", "education", "skills"];
+  const sections = ["hero", "experience", "projects", "publications", "education", "skills"];
 
   const [openLang, setOpenLang] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);

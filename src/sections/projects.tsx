@@ -254,23 +254,47 @@ export default function Projects() {
                         ${animateModal ? "scale-100" : "scale-95"}`}
           >
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 flex-shrink-0">
+            <div className="flex items-center gap-2 flex-1">
+              {project.site && (
+                <button
+                  onClick={() => window.open(project.site!, '_blank', 'noopener,noreferrer')}
+                  aria-label={t("projects.ui.visit_site")}
+                  title={t("projects.ui.visit_site")}
+                  className="rounded-full p-2 hover:bg-gray-100 flex-shrink-0"
+                >
+                  <Globe className="w-5 h-5" />
+                </button>
+              )}
+              {project.repo && (
+                <button
+                  onClick={() => window.open(project.repo!, '_blank', 'noopener,noreferrer')}
+                  aria-label={t("projects.ui.view_repo")}
+                  title={t("projects.ui.view_repo")}
+                  className="rounded-full p-2 hover:bg-gray-100 flex-shrink-0"
+                >
+                  <Github className="w-5 h-5" />
+                </button>
+              )}
+            </div>
             <div className="flex items-center gap-3 flex-1 justify-center">
               {project.logo && (
-                <img 
-                  src={project.logo} 
+                <img
+                  src={project.logo}
                   alt={`${project.title} logo`}
                   className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-contain flex-shrink-0"
                 />
               )}
               <h3 className="text-xl font-semibold">{project.title}</h3>
             </div>
-            <button
-              onClick={closeModal}
-              aria-label={t("projects.ui.close")}
-              className="rounded-full p-2 hover:bg-gray-100 flex-shrink-0"
-            >
-              ✕
-            </button>
+            <div className="flex-1 flex justify-end">
+              <button
+                onClick={closeModal}
+                aria-label={t("projects.ui.close")}
+                className="rounded-full p-2 hover:bg-gray-100 flex-shrink-0"
+              >
+                ✕
+              </button>
+            </div>
           </div>
 
             <div className="overflow-y-auto">

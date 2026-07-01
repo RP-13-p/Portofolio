@@ -4,6 +4,7 @@
     "education": "Education",
     "experience": "Experience",
     "projects": "Projects",
+    "publications": "Publications",
     "skills": "Skills",
     "resume": "Resume"
   },
@@ -87,6 +88,21 @@
       "previous_image": "Previous image",
       "next_image": "Next image",
       "visit_site": "Visit site",
+      "view_repo": "View repository"
+    }
+  },
+  "publications": {
+    "title": "Publications",
+    "article1": {
+      "title": "Hallucination Analysis in RAG and GraphRAG Systems",
+      "description": "Large Language Models augmented with retrieval are increasingly deployed for open-domain question answering, but they remain prone to hallucinations, statements unsupported by the retrieved evidence. This project empirically studies how the retrieval mechanism itself influences the frequency, nature, and types of hallucinations produced by an LLM when answering questions over a fixed knowledge base. We compare classical RAG, which retrieves text chunks by dense vector similarity, with GraphRAG, which retrieves ontology-typed facts from a Knowledge Graph via cosine similarity over verbalised triples. To this end, we enrich two complementary benchmarks, Text2KGBench-LettrIA and OSKGC, with 547 validated question–answer pairs spanning both single-hop and multi-hop reasoning, implement six pipelines sharing the same generator (two baselines, three cross-encoder–reranked hybrids, and a parent–child chunking ablation), and evaluate them using the MIRAGE framework with FactCC alongside a SentenceBERT correctness metric. Results show that hybrid recall with cross-encoder reranking on the text pipeline yields the highest mean faithfulness and answer correctness, though its faithfulness gain over plain RAG lies within confidence intervals; the statistically significant gap is between the text pipelines and GraphRAG. GraphRAG trails through three distinct failure modes: leaf-node abstention, multi-hop context gaps, and surface-form mismatch with the text-based scorer. A novel dual Graph-Chunk pipeline partially mitigates these failures by fusing text chunks and KG triples, attaining the lowest abstention rate of all pipelines. The objective is not to eliminate hallucinations but to characterise when, why, and how they arise in each paradigm."
+    },
+    "ui": {
+      "previous": "Previous publication",
+      "next": "Next publication",
+      "close": "Close",
+      "view_article": "View article",
+      "download": "Download",
       "view_repo": "View repository"
     }
   },
