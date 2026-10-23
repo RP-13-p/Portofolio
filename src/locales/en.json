@@ -22,7 +22,7 @@
 
   "hero": {
     "title": "Raphael Partouche",
-    "subtitle": "Software Engineer and Master's student in Data Science at Eurecom. My background focuses on applying Machine Learning and Artificial Intelligence to develop solutions for a wide range of problems. My expertise includes the design, development, and deployment of intelligent algorithms, as well as the creation of data-driven software tools built upon a deep understanding of model performance and generalization challenges..."
+    "subtitle": "Software Engineering and Data Science student at EURECOM, pursuing a dual degree in Management (Track GETT) at EDHEC Business School. Passionate about AI and Machine Learning, I combine technical expertise with business strategy to build intelligent, data-driven solutions with real-world impact."
   },
   "education": {
     "title": "Education",
@@ -32,6 +32,27 @@
       "description": "High-level engineering program of excellence at the heart of the Sophia Antipolis technology hub, focused on data science and artificial intelligence. I am developing strong expertise in machine learning, databases, cloud computing, information systems security, and information theory.\n\n The curriculum includes <em><strong>Machine Learning, Database Systems, Cloud, Network security, Image processing, and Information theory</em></strong>, as well as cross-disciplinary subjects such as <em><strong>Law and Management</em></strong>.",
       "year": "2024 — 2027",
       "city": "Sophia Antipolis, France"
+    },
+    "berkeley": {
+      "title": "UC Berkeley",
+      "subtitle": "Master in Management",
+      "description": "Incoming in 2028.",
+      "year": "2028 — 2029",
+      "city": "Berkeley, USA"
+    },
+    "edhec": {
+      "title": "EDHEC Business School",
+      "subtitle": "Master in Management (MiM) — Global Economic Transformation & Technology (GETT)",
+      "description": "Master in Management combining business strategy, corporate finance, technology, and innovation, pursued as a dual degree alongside my engineering studies at EURECOM.\n\n The curriculum includes <em><strong>Corporate Finance, Accounting, Strategy, Innovation, and Marketing & AI</strong></em>.",
+      "year": "2026 — 2029",
+      "city": "France"
+    },
+    "skk": {
+      "title": "SKK GSB — Sungkyunkwan University",
+      "subtitle": "Master in Management",
+      "description": "International academic experience focused on AI, entrepreneurship, financial markets, and global business management.\n\n The curriculum includes <em><strong>Machine Learning, Equity Valuation, Financial Risk Management, Decision Analytics, and Entrepreneurship</strong></em>.",
+      "year": "January 2027 — June 2027",
+      "city": "Seoul, South Korea"
     },
     "jacques": {
       "title": "Lycée Jacques-Decour",

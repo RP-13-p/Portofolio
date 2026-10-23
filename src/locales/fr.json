@@ -23,7 +23,7 @@
   },
   "hero": {
     "title": "Raphael Partouche",
-    "subtitle": "Ingénieur Software et étudiant en Master Data Science à Eurecom. Mon parcours se concentre sur l’application du Machine Learning et de l’Intelligence Artificielle à la création de solutions à divers problèmes. Mon expertise englobe la conception, le développement et le déploiement d’algorithmes intelligents ainsi que la conception d’outils logiciels exploitant la donnée et reposant sur une compréhension approfondie des enjeux liés à la performance et à la généralisation des modèles..."
+    "subtitle": "Étudiant ingénieur en informatique et Data Science à EURECOM, en double diplôme avec le Master in Management (Track GETT) de l’EDHEC. Passionné par l’IA et le Machine Learning, je combine expertise technique et vision stratégique pour développer des solutions intelligentes à impact concret."
   },
   "about": {
     "title": "",
@@ -37,6 +37,27 @@
       "description": "Formation d’ingénieur d’excellence au cœur du pôle technologique de Sophia Antipolis, orientée vers la science des données et l’intelligence artificielle. J’y développe une expertise solide en apprentissage automatique, bases de données, Cloud, sécurité des systèmes d’information et théorie de l’information.\n\n Les enseignements incluent <em><strong> Machine Learning, Database Systems, Cloud, Network Security, Image Processing, Information Theory</strong></em>, mais aussi des disciplines transversales telles que le <em><strong>Droit et le Management</em></strong>.",
       "year": "2024 — 2027",
       "city": "Sophia Antipolis, France"
+    },
+    "berkeley": {
+      "title": "UC Berkeley",
+      "subtitle": "Master in Management",
+      "description": "Admis — rentrée 2028.",
+      "year": "2028 — 2029",
+      "city": "Berkeley, États-Unis"
+    },
+    "edhec": {
+      "title": "EDHEC Business School",
+      "subtitle": "Master in Management (MiM) — Global Economic Transformation & Technology (GETT)",
+      "description": "Master in Management alliant stratégie d’entreprise, finance d’entreprise, technologie et innovation, suivi en double diplôme avec ma formation d’ingénieur à EURECOM.\n\n Les enseignements incluent <em><strong>Corporate Finance, Accounting, Strategy, Innovation et Marketing & AI</strong></em>.",
+      "year": "2026 — 2029",
+      "city": "France"
+    },
+    "skk": {
+      "title": "SKK GSB — Sungkyunkwan University",
+      "subtitle": "Master in Management",
+      "description": "Expérience académique internationale centrée sur l’IA, l’entrepreneuriat, les marchés financiers et le management international.\n\n Les enseignements incluent <em><strong>Machine Learning, Equity Valuation, Financial Risk Management, Decision Analytics et Entrepreneurship</strong></em>.",
+      "year": "Janvier 2027 — Juin 2027",
+      "city": "Séoul, Corée du Sud"
     },
     "jacques": {
       "title": "Lycée Jacques-Decour",
